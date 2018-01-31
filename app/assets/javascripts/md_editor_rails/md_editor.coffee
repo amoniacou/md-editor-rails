@@ -58,7 +58,7 @@ preview = ->
     false
   else
     $.post(
-      '/articles/preview',
+      '/md_preview',
       {md: $('#md-text textarea').val()},
       (data) ->
         h = $('#md-text').outerHeight();
