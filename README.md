@@ -23,6 +23,22 @@ $ gem install md_editor_rails
 
 ## ActiveAdmin example
 
+active_admin.scss
+
+```
+@import "md_editor_rails/md_editor";
+@import "md_editor_rails/markdown";
+@import "dropzone/dropzone";
+```
+
+active_admin.js.coffee
+
+```
+#= require dropzone
+#= require md_editor_rails/md_editor
+```
+
+
 admin/post.rb
 
 ```
