@@ -1,3 +1,5 @@
+# TODO - refactor
+
 md_editor = () ->
   $('.btn-toolbar .btn-group button').click ->
     att_class = this.classList

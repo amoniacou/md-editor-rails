@@ -1,3 +1,5 @@
+# TODO - refactor
+
 module MdEditorHelper
   require 'redcarpet'
   require 'font-awesome-rails'
