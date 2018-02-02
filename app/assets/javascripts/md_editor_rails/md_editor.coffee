@@ -59,16 +59,19 @@ preview = ->
     $('.preview-panel').attr('hidden', 'true')
     false
   else
-    $.post(
-      '/md_preview',
-      {md: $('#md-text textarea').val()},
-      (data) ->
+    $.ajax
+      url: '/md_preview'
+      type: 'post'
+      data: {md: $('#md-text textarea').val()}
+      headers:
+        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      success: (data) ->
         h = $('#md-text').outerHeight();
         $('.preview_md').text('Editor')
         $('#md-text').attr('hidden', 'true')
         $('.preview-panel').removeAttr('hidden').attr('style', "height: #{h}px;")
         $('#md-preview').html(data)
-    )
+        return
 
 getSelection = (elem) ->
   start: elem.selectionStart
